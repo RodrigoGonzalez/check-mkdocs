@@ -10,6 +10,7 @@ is configured correctly.
 - Builds the MkDocs project documentation via `mkdocs build`.
 - Checks the built documentation via `mkdocs serve`.
 - Can be used as a pre-commit hook.
+- Optionally, it can generate a build of the MkDocs documentation.
 
 ## Pre-Commit Usage
 
