@@ -48,6 +48,9 @@ def main(argv: None = None) -> int:
     positional and keyword arguments are provided, the keyword argument will
     take precedence.
 
+    Another argument `--generate-build` is added to the parser. This argument
+    is a flag to generate a build of the documentation. The default value is False.
+
     The function parses the command-line arguments using the
     `parser.parse_args(argv)` method, which returns an object containing the
     parsed arguments.
@@ -81,13 +84,31 @@ def main(argv: None = None) -> int:
     Finally, the function returns 0 if all the above processes are successful.
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument("config", nargs="?", default="mkdocs.yml")
-    parser.add_argument("--config", dest="config_opt")
+    parser.add_argument(
+        "config",
+        nargs="?",
+        default="mkdocs.yml",
+        help="Path to the configuration file. Default is 'mkdocs.yml'",
+    )
+    parser.add_argument(
+        "--config",
+        dest="config_opt",
+        help=(
+            "Path to the configuration file. Overrides the positional 'config' "
+            "argument if provided."
+        ),
+    )
+    parser.add_argument(
+        "--generate-build",
+        dest="generate_build",
+        action="store_true",
+        default=False,
+        help="Flag to generate a build of the documentation. Default is False.",
+    )
     args = parser.parse_args(argv)
 
     config_file = args.config_opt if args.config_opt else args.config
 
-    config_file = args.config
     if not os.path.exists(config_file):
         raise FileNotFoundError(
             f"Config file '{config_file}' not found. Please specify a " f"config file."
@@ -114,20 +135,24 @@ def main(argv: None = None) -> int:
         print(f"Error in configuration file: {e}")
         return _generate_user_friendly_error_message(config_file, "Error in configuration file", e)
 
-    # Build the documentation in a temporary directory
+    # Build the documentation
     try:
-        with tempfile.TemporaryDirectory() as temp_dir:
-            config["site_dir"] = temp_dir
+        if args.generate_build:
             build(config)
-            # Start the server
-            try:
-                server = serve(config)
-            except Exception as e:
-                return _generate_user_friendly_error_message(
-                    config_file, "Error starting the server", e
-                )
-            finally:
-                server.stop()
+        else:
+            with tempfile.TemporaryDirectory() as temp_dir:
+                config["site_dir"] = temp_dir
+                build(config)
+        # Start the server
+        try:
+            server = serve(config)
+        except Exception as e:
+            return _generate_user_friendly_error_message(
+                config_file, "Error starting the server", e
+            )
+        finally:
+            server.stop()
+
     except Exception as e:
         return _generate_user_friendly_error_message(
             config_file, "Error building the documentation", e
