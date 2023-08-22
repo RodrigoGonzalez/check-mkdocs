@@ -1,13 +1,13 @@
 import argparse
 import os
 import platform
+import subprocess
 import sys
 import tempfile
+import time
 import traceback
 
 import yaml
-from mkdocs.commands.build import build
-from mkdocs.commands.serve import serve
 from mkdocs.config import load_config
 from mkdocs.exceptions import ConfigurationError
 
@@ -107,7 +107,7 @@ def main(argv: None = None) -> int:
     )
     args = parser.parse_args(argv)
 
-    config_file = args.config_opt if args.config_opt else args.config
+    config_file = args.config_opt or args.config
 
     if not os.path.exists(config_file):
         raise FileNotFoundError(
@@ -137,26 +137,32 @@ def main(argv: None = None) -> int:
 
     # Build the documentation
     try:
+        print("Building the documentation...")
         if args.generate_build:
-            build(config)
+            subprocess.run(["mkdocs", "build", "--config-file", config_file], check=True)
         else:
             with tempfile.TemporaryDirectory() as temp_dir:
-                config["site_dir"] = temp_dir
-                build(config)
-        # Start the server
-        try:
-            server = serve(config)
-        except Exception as e:
-            return _generate_user_friendly_error_message(
-                config_file, "Error starting the server", e
-            )
-        finally:
-            server.stop()
-
+                subprocess.run(
+                    ["mkdocs", "build", "--config-file", config_file, "--site-dir", temp_dir],
+                    check=True,
+                )
     except Exception as e:
         return _generate_user_friendly_error_message(
             config_file, "Error building the documentation", e
         )
+
+    print("Trying to start the server...")
+    # Start the server
+    try:
+        server_process = subprocess.Popen(
+            ["mkdocs", "serve", "--config-file", config_file, "--no-livereload", "--dirty"]
+        )
+        time.sleep(5)  # wait for 5 seconds to let the server start
+        print("Shutting down...")
+        server_process.terminate()
+        server_process.wait()
+    except Exception as e:
+        return _generate_user_friendly_error_message(config_file, "Error starting the server", e)
 
     return 0
 
