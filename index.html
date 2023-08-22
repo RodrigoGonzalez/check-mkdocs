@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.1">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.3">
     
     
       
@@ -350,6 +350,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    Known Issues
+  </a>
+  
+    <nav class="md-nav" aria-label="Known Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-mkdocs-plugins" class="md-nav__link">
+    Missing MkDocs Plugins
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#check_mkdocs" class="md-nav__link">
     check_mkdocs
   </a>
@@ -505,6 +525,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    Known Issues
+  </a>
+  
+    <nav class="md-nav" aria-label="Known Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-mkdocs-plugins" class="md-nav__link">
+    Missing MkDocs Plugins
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#check_mkdocs" class="md-nav__link">
     check_mkdocs
   </a>
@@ -596,11 +636,14 @@ poetry install
 is the name of your MkDocs YAML configuration file:</p>
 <pre><code class="language-yaml">repos:
     - repo: https://github.com/RodrigoGonzalez/check-mkdocs
-      rev: v1.1.6
+      rev: v1.2.0
       hooks:
         - id: check-mkdocs
           name: check-mkdocs
           args: [&quot;--config&quot;, &quot;mkdocs.yml&quot;]  # Optional, mkdocs.yml is the default
+          # If you have additional plugins or libraries that are not included in
+          # check-mkdocs, add them here
+          additional_dependencies: ['mkdocs-material']
 </code></pre>
 <h2 id="command-line-usage">Command-Line Usage</h2>
 <p>To run this hook, you can use the following command:</p>
@@ -638,6 +681,32 @@ the tool will use the MkDocs default location as the
 build the project documentation, and start the server. If
 there's an error in any of these steps, the tool will print
 an error message and return an error code.</p>
+<h2 id="known-issues">Known Issues</h2>
+<h3 id="missing-mkdocs-plugins">Missing MkDocs Plugins</h3>
+<p>Given the enormous number of plugins available for MkDocs,
+it's possible that some plugins are not included in this
+tool. In this case you will see an error message similar to
+this:</p>
+<pre><code class="language-shell">check-mkdocs.............................................................Failed
+- hook id: check-mkdocs
+- exit code: 1
+
+Config value 'theme': Unrecognised theme name: 'material'. The available installed themes are: mkdocs, readthedocs
+Config value 'markdown_extensions': Failed to load extension 'pymdownx.snippets'.
+ModuleNotFoundError: No module named 'pymdownx'
+Config value 'plugins': The &quot;mkdocstrings&quot; plugin is not installed
+
+make: *** [pre-commit] Error 1
+</code></pre>
+<p>If you have additional plugins or libraries that are not
+included in check-mkdocs, add them here:</p>
+<pre><code class="language-yaml">repos:
+    - repo: https://github.com/RodrigoGonzalez/check-mkdocs
+      hooks:
+        - id: check-mkdocs
+          # If you have additional plugins or libraries that are not included in check-mkdocs, add them here
+          additional_dependencies: ['mkdocs-material', 'mkdocstrings']
+</code></pre>
 
 
 <div class="doc doc-object doc-module">
