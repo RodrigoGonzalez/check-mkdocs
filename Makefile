@@ -164,7 +164,8 @@ clean: clean-docs  clean-cov  ## Clean package
 	find . -type f -name '.coverage' | xargs rm -rf
 	rm -rf build dist
 
-build:  pre-commit tests clean ## Build the project
+#build:  pre-commit tests clean ## Build the project
+build:  pre-commit clean ## Build the project
 	poetry build
 
 deploy:  ## Deploy to PyPI

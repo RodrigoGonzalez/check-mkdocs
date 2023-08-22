@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "check_mkdocs"
+name = "check-mkdocs"
 version = "1.1.0"
 description = "Simple check/command-line tool that parses, validates and loads configuration, builds the mkdocs project documentation, and serves it via a web server"
 readme = "README.md"
@@ -10,7 +10,7 @@ license = "MIT"
 packages = [
     {include = "check_mkdocs", from = "src"}
 ]
-include = ["README.rst", "LICENSE", "CHANGELOG.md"]
+include = ["README.md", "LICENSE", "CHANGELOG.md"]
 
 [tool.poetry.scripts]
 check-mkdocs = "check_mkdocs.__main__:main"
