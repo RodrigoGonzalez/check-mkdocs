@@ -46,6 +46,8 @@ repos:
         - id: check-mkdocs
           name: check-mkdocs
           args: ["--config", "mkdocs.yml"]  # Optional, mkdocs.yml is the default
+          # If you have additional plugins or libraries that are not included in check-mkdocs, add them here
+          additional_dependencies: ['mkdocs-material']
 ```
 
 ## Command-Line Usage
@@ -101,3 +103,37 @@ This command will validate the MkDocs configuration file,
 build the project documentation, and start the server. If
 there's an error in any of these steps, the tool will print
 an error message and return an error code.
+
+## Known Issues
+
+### Missing MkDocs Plugins
+
+Given the enormous number of plugins available for MkDocs,
+it's possible that some plugins are not included in this
+tool. In this case you will see an error message similar to
+this:
+
+```shell
+check-mkdocs.............................................................Failed
+- hook id: check-mkdocs
+- exit code: 1
+
+Config value 'theme': Unrecognised theme name: 'material'. The available installed themes are: mkdocs, readthedocs
+Config value 'markdown_extensions': Failed to load extension 'pymdownx.snippets'.
+ModuleNotFoundError: No module named 'pymdownx'
+Config value 'plugins': The "mkdocstrings" plugin is not installed
+
+make: *** [pre-commit] Error 1
+```
+
+If you have additional plugins or libraries that are not
+included in check-mkdocs, add them here:
+
+```yaml
+repos:
+    - repo: https://github.com/RodrigoGonzalez/check-mkdocs
+      hooks:
+        - id: check-mkdocs
+          # If you have additional plugins or libraries that are not included in check-mkdocs, add them here
+          additional_dependencies: ['mkdocs-material', 'mkdocstrings']
+```

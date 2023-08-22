@@ -20,6 +20,20 @@ check-mkdocs = "check_mkdocs.__main__:main"
 python = "^3.8"
 pyyaml = "^6.0.1"
 mkdocs = "^1.4.0"
+mkdocs-material = "^9.1.6"
+mkdocstrings = {extras = ["all"], version = "^0.22.0"}
+pymarkdown = "^0.1.4"
+mkdocs-macros-plugin = "^1.0.4"
+mkdocs-click = "^0.8.0"
+mkdocs-jupyter = "^0.24.2"
+mknotebooks = "^0.8.0"
+mkdocs-monorepo-plugin = "^1.0.5"
+mkdocs-pdf-export-plugin = "^0.5.10"
+mkdocs-table-reader-plugin = "^2.0.1"
+mkdocs-autolinks-plugin = "^0.7.1"
+mkdocs-redirects = "^1.2.1"
+mkdocs-exclude = "^1.0.2"
+mkdocs-exclude-search = "^0.6.5"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -38,10 +52,6 @@ coverage = { version = "^7.3.0",  extras = ["toml"] }
 covdefaults = "^2.3.0"
 pytest-mock = "^3.11.1"
 
-
-[tool.poetry.group.docs.dependencies]
-mkdocs-material = "^9.1.6"
-mkdocstrings = {extras = ["optimize", "python"], version = "^0.22.0"}
 
 [tool.commitizen]
 name = "cz_conventional_commits"
