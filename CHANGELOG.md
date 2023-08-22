@@ -1,3 +1,9 @@
+## v1.1.3 (2023-08-22)
+
+### Fix
+
+- **Wrong-versions-selected**: updated index and readme
+
 ## v1.1.2 (2023-08-22)
 
 ### Fix
