@@ -103,7 +103,7 @@ def main(argv: None = None) -> int:
         dest="generate_build",
         action="store_true",
         default=False,
-        help="Flag to generate a build of the documentation. Default is False.",
+        help="Flag to generate a build of the documentation in your project. Default is False.",
     )
     args = parser.parse_args(argv)
 
