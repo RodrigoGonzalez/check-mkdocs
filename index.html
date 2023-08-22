@@ -1,0 +1,1038 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="changelog/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.1">
+    
+    
+      
+        <title>Check MkDocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.0e669242.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#welcome-to-check-mkdocs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Check MkDocs" class="md-header__button md-logo" aria-label="Check MkDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Check MkDocs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/RodrigoGonzalez/check-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    RodrigoGonzalez/flake8-custom-import-rules
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Check MkDocs" class="md-nav__button md-logo" aria-label="Check MkDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Check MkDocs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/RodrigoGonzalez/check-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    RodrigoGonzalez/flake8-custom-import-rules
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-commit-usage" class="md-nav__link">
+    Pre-Commit Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-line-usage" class="md-nav__link">
+    Command-Line Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Command-Line Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-generate-build-argument" class="md-nav__link">
+    The --generate-build Argument
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check_mkdocs" class="md-nav__link">
+    check_mkdocs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check_mkdocs.main" class="md-nav__link">
+    main()
+  </a>
+  
+    <nav class="md-nav" aria-label="main()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check_mkdocs.main--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check_mkdocs.main--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check_mkdocs.main--raises" class="md-nav__link">
+    Raises
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check_mkdocs.main--description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="changelog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-commit-usage" class="md-nav__link">
+    Pre-Commit Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-line-usage" class="md-nav__link">
+    Command-Line Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Command-Line Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-generate-build-argument" class="md-nav__link">
+    The --generate-build Argument
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check_mkdocs" class="md-nav__link">
+    check_mkdocs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check_mkdocs.main" class="md-nav__link">
+    main()
+  </a>
+  
+    <nav class="md-nav" aria-label="main()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check_mkdocs.main--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check_mkdocs.main--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check_mkdocs.main--raises" class="md-nav__link">
+    Raises
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check_mkdocs.main--description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="welcome-to-check-mkdocs">Welcome to Check MkDocs</h1>
+<p>This is a simple .pre-commit-config.yaml hook to check if MkDocs is configured correctly.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Validates the MkDocs configuration file (default is <code>mkdocs.yml</code>).</li>
+<li>Builds the MkDocs project documentation via <code>mkdocs build</code>.</li>
+<li>Checks the built documentation via <code>mkdocs serve</code>.</li>
+<li>Can be used as a pre-commit hook.</li>
+<li>Optionally, it can generate a build of the MkDocs documentation.</li>
+</ul>
+<h2 id="pre-commit-usage">Pre-Commit Usage</h2>
+<p>Add this to your <code>.pre-commit-config.yaml</code>, where <code>mkdocs.yml</code>
+is the name of your MkDocs YAML configuration file:</p>
+<pre><code class="language-yaml">repos:
+    - repo: https://github.com/RodrigoGonzalez/check-mkdocs
+      rev: v1.1.3
+      hooks:
+        - id: check-mkdocs
+          name: check-mkdocs
+          args: [--config=mkdocs.yml]  # Optional, mkdocs.yml is the default
+</code></pre>
+<h2 id="command-line-usage">Command-Line Usage</h2>
+<p>To run this hook, you can use the following command:</p>
+<pre><code class="language-shell">check-mkdocs --config=mkdocs.yml
+</code></pre>
+<p>This works as well:</p>
+<pre><code class="language-shell">check-mkdocs mkdocs.yml
+</code></pre>
+<p>And if <code>mkdocs.yml</code> is the name of your MkDocs YAML
+configuration file, this works too:</p>
+<pre><code class="language-shell">check-mkdocs
+</code></pre>
+<p>These commands will validate the MkDocs configuration
+file, build the project documentation, and start the
+server. If there's an error in any of these steps, the
+tool will print an error message and return an error code.</p>
+<h3 id="the-generate-build-argument">The <code>--generate-build</code> Argument</h3>
+<p>The <code>--generate-build</code> argument is a command-line flag that
+you can use to instruct the check_mkdocs tool to generate a
+build of the MkDocs documentation. This argument is
+optional, and its default value is False, which means that
+by default, the tool will not generate a build.</p>
+<p>When you provide this argument, the tool will call the
+build function from mkdocs.commands.build with the loaded
+configuration. This function will build the project
+documentation and place the built documentation in the
+<code>site_dir</code> directory specified in the configuration. If the
+<code>site_dir</code> directory is not specified in the configuration,
+the tool will use the MkDocs default location as the
+<code>site_dir</code> (i.e., <code>site/</code>).</p>
+<p>Here's how you can use this argument:</p>
+<pre><code class="language-shell">check-mkdocs --config=mkdocs.yml --generate-build
+</code></pre>
+<p>This command will validate the MkDocs configuration file,
+build the project documentation, and start the server. If
+there's an error in any of these steps, the tool will print
+an error message and return an error code.</p>
+
+
+<div class="doc doc-object doc-module">
+
+
+<a id="check_mkdocs"></a>
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="check_mkdocs.main" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="p">:</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>The main function is the entry point of the program.</p>
+<h4 id="check_mkdocs.main--parameters">Parameters</h4>
+
+<details class="argv-" open>
+  <summary>None, optional</summary>
+  <p>An optional argument representing the command-line arguments. Defaults
+to None if not provided.</p>
+</details>      <h4 id="check_mkdocs.main--returns">Returns</h4>
+<p>int
+    The return value of the function, which is an integer.</p>
+<h4 id="check_mkdocs.main--raises">Raises</h4>
+<p>FileNotFoundError
+    If the specified config file does not exist.</p>
+<h4 id="check_mkdocs.main--description">Description</h4>
+<p>The main function creates an argument parser object using the
+<code>argparse.ArgumentParser()</code> class. It adds a positional argument
+<code>config</code> to the parser, which represents the path to the
+configuration file. The <code>nargs='?'</code> option specifies that the argument is
+optional and can be omitted.</p>
+<p>The <code>default='mkdocs.yml'</code> option specifies the default value of the
+argument if it is not provided.</p>
+<p>Additionally, it adds a keyword argument <code>--config</code> to the parser. This
+argument also represents the path to the configuration file. If both the
+positional and keyword arguments are provided, the keyword argument will
+take precedence.</p>
+<p>Another argument <code>--generate-build</code> is added to the parser. This argument
+is a flag to generate a build of the documentation. The default value is False.</p>
+<p>The function parses the command-line arguments using the
+<code>parser.parse_args(argv)</code> method, which returns an object containing the
+parsed arguments.</p>
+<p>The function retrieves the value of the <code>config</code> argument from the
+parsed arguments.</p>
+<p>If the specified config file does not exist, the function raises a
+<code>FileNotFoundError</code> with a descriptive error message.</p>
+<p>The function then attempts to open the config file in read mode using the
+<code>open(config_file, 'r')</code> function. If successful, it reads the contents of
+the file and loads them as a YAML object using the <code>yaml.safe_load(f)</code>
+function.</p>
+<p>The function checks if the 'site_name' key is present in the loaded YAML.
+If not, it prints an error message.</p>
+<p>The function then loads the configuration using the
+<code>load_config(config_file=config_file)</code> function. If there is an error in
+the configuration file, it prints an error message.</p>
+<p>The function then attempts to build the documentation using the
+<code>build(config)</code> function. If there is an error during the build process,
+it returns a user-friendly error message.</p>
+<p>The function then attempts to start the server using the
+<code>serve(config_file=config_file)</code> function. If there is an error during the
+server start process, it returns a user-friendly error message.</p>
+<p>Finally, the function returns 0 if all the above processes are successful.</p>
+
+          <details class="quote">
+            <summary>Source code in <code>src/check_mkdocs/check_mkdocs.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">argv</span><span class="p">:</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The main function is the entry point of the program.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    argv : None, optional</span>
+<span class="sd">        An optional argument representing the command-line arguments. Defaults</span>
+<span class="sd">        to None if not provided.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    int</span>
+<span class="sd">        The return value of the function, which is an integer.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    FileNotFoundError</span>
+<span class="sd">        If the specified config file does not exist.</span>
+
+<span class="sd">    Description</span>
+<span class="sd">    -----------</span>
+<span class="sd">    The main function creates an argument parser object using the</span>
+<span class="sd">    `argparse.ArgumentParser()` class. It adds a positional argument</span>
+<span class="sd">    `config` to the parser, which represents the path to the</span>
+<span class="sd">    configuration file. The `nargs=&#39;?&#39;` option specifies that the argument is</span>
+<span class="sd">    optional and can be omitted.</span>
+
+<span class="sd">    The `default=&#39;mkdocs.yml&#39;` option specifies the default value of the</span>
+<span class="sd">    argument if it is not provided.</span>
+
+<span class="sd">    Additionally, it adds a keyword argument `--config` to the parser. This</span>
+<span class="sd">    argument also represents the path to the configuration file. If both the</span>
+<span class="sd">    positional and keyword arguments are provided, the keyword argument will</span>
+<span class="sd">    take precedence.</span>
+
+<span class="sd">    Another argument `--generate-build` is added to the parser. This argument</span>
+<span class="sd">    is a flag to generate a build of the documentation. The default value is False.</span>
+
+<span class="sd">    The function parses the command-line arguments using the</span>
+<span class="sd">    `parser.parse_args(argv)` method, which returns an object containing the</span>
+<span class="sd">    parsed arguments.</span>
+
+<span class="sd">    The function retrieves the value of the `config` argument from the</span>
+<span class="sd">    parsed arguments.</span>
+
+<span class="sd">    If the specified config file does not exist, the function raises a</span>
+<span class="sd">    `FileNotFoundError` with a descriptive error message.</span>
+
+<span class="sd">    The function then attempts to open the config file in read mode using the</span>
+<span class="sd">    `open(config_file, &#39;r&#39;)` function. If successful, it reads the contents of</span>
+<span class="sd">    the file and loads them as a YAML object using the `yaml.safe_load(f)`</span>
+<span class="sd">    function.</span>
+
+<span class="sd">    The function checks if the &#39;site_name&#39; key is present in the loaded YAML.</span>
+<span class="sd">    If not, it prints an error message.</span>
+
+<span class="sd">    The function then loads the configuration using the</span>
+<span class="sd">    `load_config(config_file=config_file)` function. If there is an error in</span>
+<span class="sd">    the configuration file, it prints an error message.</span>
+
+<span class="sd">    The function then attempts to build the documentation using the</span>
+<span class="sd">    `build(config)` function. If there is an error during the build process,</span>
+<span class="sd">    it returns a user-friendly error message.</span>
+
+<span class="sd">    The function then attempts to start the server using the</span>
+<span class="sd">    `serve(config_file=config_file)` function. If there is an error during the</span>
+<span class="sd">    server start process, it returns a user-friendly error message.</span>
+
+<span class="sd">    Finally, the function returns 0 if all the above processes are successful.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;config&quot;</span><span class="p">,</span>
+        <span class="n">nargs</span><span class="o">=</span><span class="s2">&quot;?&quot;</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="s2">&quot;mkdocs.yml&quot;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Path to the configuration file. Default is &#39;mkdocs.yml&#39;&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--config&quot;</span><span class="p">,</span>
+        <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;config_opt&quot;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="p">(</span>
+            <span class="s2">&quot;Path to the configuration file. Overrides the positional &#39;config&#39; &quot;</span>
+            <span class="s2">&quot;argument if provided.&quot;</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--generate-build&quot;</span><span class="p">,</span>
+        <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;generate_build&quot;</span><span class="p">,</span>
+        <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Flag to generate a build of the documentation in your project. Default is False.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span>
+
+    <span class="n">config_file</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">config_opt</span> <span class="ow">or</span> <span class="n">args</span><span class="o">.</span><span class="n">config</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">config_file</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Config file &#39;</span><span class="si">{</span><span class="n">config_file</span><span class="si">}</span><span class="s2">&#39; not found. Please specify a &quot;</span> <span class="sa">f</span><span class="s2">&quot;config file.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Load the YAML to check initial errors</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">config_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">config</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="c1"># Check if &#39;site_name&#39; key is present in the loaded YAML</span>
+        <span class="k">if</span> <span class="s2">&quot;site_name&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">config</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">config_file</span><span class="si">}</span><span class="s2">: Missing site_name field. This is a required &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;field. See: https://www.mkdocs.org/user-guide/configuration/&quot;</span>
+            <span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_generate_user_friendly_error_message</span><span class="p">(</span><span class="n">config_file</span><span class="p">,</span> <span class="s2">&quot;Error loading YAML&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+
+    <span class="c1"># Load the configuration</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">load_config</span><span class="p">(</span><span class="n">config_file</span><span class="o">=</span><span class="n">config_file</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">ConfigurationError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error in configuration file: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_generate_user_friendly_error_message</span><span class="p">(</span><span class="n">config_file</span><span class="p">,</span> <span class="s2">&quot;Error in configuration file&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+
+    <span class="c1"># Build the documentation</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Building the documentation...&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">generate_build</span><span class="p">:</span>
+            <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;mkdocs&quot;</span><span class="p">,</span> <span class="s2">&quot;build&quot;</span><span class="p">,</span> <span class="s2">&quot;--config-file&quot;</span><span class="p">,</span> <span class="n">config_file</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">()</span> <span class="k">as</span> <span class="n">temp_dir</span><span class="p">:</span>
+                <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+                    <span class="p">[</span><span class="s2">&quot;mkdocs&quot;</span><span class="p">,</span> <span class="s2">&quot;build&quot;</span><span class="p">,</span> <span class="s2">&quot;--config-file&quot;</span><span class="p">,</span> <span class="n">config_file</span><span class="p">,</span> <span class="s2">&quot;--site-dir&quot;</span><span class="p">,</span> <span class="n">temp_dir</span><span class="p">],</span>
+                    <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_generate_user_friendly_error_message</span><span class="p">(</span>
+            <span class="n">config_file</span><span class="p">,</span> <span class="s2">&quot;Error building the documentation&quot;</span><span class="p">,</span> <span class="n">e</span>
+        <span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Trying to start the server...&quot;</span><span class="p">)</span>
+    <span class="c1"># Start the server</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">server_process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span>
+            <span class="p">[</span><span class="s2">&quot;mkdocs&quot;</span><span class="p">,</span> <span class="s2">&quot;serve&quot;</span><span class="p">,</span> <span class="s2">&quot;--config-file&quot;</span><span class="p">,</span> <span class="n">config_file</span><span class="p">,</span> <span class="s2">&quot;--no-livereload&quot;</span><span class="p">,</span> <span class="s2">&quot;--dirty&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># wait for 5 seconds to let the server start</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shutting down...&quot;</span><span class="p">)</span>
+        <span class="n">server_process</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
+        <span class="n">server_process</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_generate_user_friendly_error_message</span><span class="p">(</span><span class="n">config_file</span><span class="p">,</span> <span class="s2">&quot;Error starting the server&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="mi">0</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.indexes", "navigation.instant"], "search": "assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.78eede0e.min.js"></script>
+      
+    
+  </body>
+</html>
