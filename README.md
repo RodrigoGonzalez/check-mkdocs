@@ -1,4 +1,9 @@
 # check-mkdocs
+[![PyPI Package latest release](https://img.shields.io/pypi/v/check-mkdocs.svg?style=flat-square)](https://pypi.org/project/check-mkdocs/)
+[![Supported versions](https://img.shields.io/pypi/pyversions/check-mkdocs.svg?style=flat-square)](https://pypi.org/project/check-mkdocs/)
+[![code style black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
+
 Check if MkDocs is configured correctly
 
 This is a simple .pre-commit-config.yaml hook to check if MkDocs
