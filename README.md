@@ -4,6 +4,25 @@ Check if MkDocs is configured correctly
 This is a simple .pre-commit-config.yaml hook to check if MkDocs
 is configured correctly.
 
+## Installation via Pip
+
+You can install this tool via pip:
+
+```shell
+pip install check-mkdocs
+```
+
+### Local Installation
+
+This tool is packaged with Poetry. To install it, you can clone the
+repository and use Poetry to install the dependencies:
+
+```shell
+git clone https://github.com/RodrigoGonzalez/check-mkdocs.git
+cd check-mkdocs
+poetry install
+```
+
 ## Features
 
 - Validates the MkDocs configuration file (default is `mkdocs.yml`).
@@ -82,22 +101,3 @@ This command will validate the MkDocs configuration file,
 build the project documentation, and start the server. If
 there's an error in any of these steps, the tool will print
 an error message and return an error code.
-
-## Installation via Pip
-
-You can install this tool via pip:
-
-```shell
-pip install check-mkdocs
-```
-
-### Local Installation
-
-This tool is packaged with Poetry. To install it, you can clone the
-repository and use Poetry to install the dependencies:
-
-```shell
-git clone https://github.com/RodrigoGonzalez/check-mkdocs.git
-cd check-mkdocs
-poetry install
-```

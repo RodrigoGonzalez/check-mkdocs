@@ -10,6 +10,25 @@ This is a simple .pre-commit-config.yaml hook to check if MkDocs is configured c
 - Can be used as a pre-commit hook.
 - Optionally, it can generate a build of the MkDocs documentation.
 
+## Installation via Pip
+
+You can install this tool via pip:
+
+```shell
+pip install check-mkdocs
+```
+
+### Local Installation
+
+This tool is packaged with Poetry. To install it, you can clone the
+repository and use Poetry to install the dependencies:
+
+```shell
+git clone https://github.com/RodrigoGonzalez/check-mkdocs.git
+cd check-mkdocs
+poetry install
+```
+
 ## Pre-Commit Usage
 
 Add this to your `.pre-commit-config.yaml`, where `mkdocs.yml`
