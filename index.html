@@ -303,6 +303,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#installation-via-pip" class="md-nav__link">
+    Installation via Pip
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation via Pip">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-installation" class="md-nav__link">
+    Local Installation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pre-commit-usage" class="md-nav__link">
     Pre-Commit Usage
   </a>
@@ -438,6 +458,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#installation-via-pip" class="md-nav__link">
+    Installation via Pip
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation via Pip">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-installation" class="md-nav__link">
+    Local Installation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pre-commit-usage" class="md-nav__link">
     Pre-Commit Usage
   </a>
@@ -540,12 +580,23 @@
 <li>Can be used as a pre-commit hook.</li>
 <li>Optionally, it can generate a build of the MkDocs documentation.</li>
 </ul>
+<h2 id="installation-via-pip">Installation via Pip</h2>
+<p>You can install this tool via pip:</p>
+<pre><code class="language-shell">pip install check-mkdocs
+</code></pre>
+<h3 id="local-installation">Local Installation</h3>
+<p>This tool is packaged with Poetry. To install it, you can clone the
+repository and use Poetry to install the dependencies:</p>
+<pre><code class="language-shell">git clone https://github.com/RodrigoGonzalez/check-mkdocs.git
+cd check-mkdocs
+poetry install
+</code></pre>
 <h2 id="pre-commit-usage">Pre-Commit Usage</h2>
 <p>Add this to your <code>.pre-commit-config.yaml</code>, where <code>mkdocs.yml</code>
 is the name of your MkDocs YAML configuration file:</p>
 <pre><code class="language-yaml">repos:
     - repo: https://github.com/RodrigoGonzalez/check-mkdocs
-      rev: v1.1.3
+      rev: v1.1.4
       hooks:
         - id: check-mkdocs
           name: check-mkdocs
