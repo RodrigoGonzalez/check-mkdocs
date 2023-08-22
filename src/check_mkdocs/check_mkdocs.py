@@ -8,6 +8,8 @@ import time
 import traceback
 
 import yaml
+from mkdocs.config import load_config
+from mkdocs.exceptions import ConfigurationError
 
 
 def main(argv: None = None) -> int:
@@ -125,6 +127,13 @@ def main(argv: None = None) -> int:
 
     except Exception as e:
         return _generate_user_friendly_error_message(config_file, "Error loading YAML", e)
+
+    # Load the configuration
+    try:
+        config = load_config(config_file=config_file)
+    except ConfigurationError as e:
+        print(f"Error in configuration file: {e}")
+        return _generate_user_friendly_error_message(config_file, "Error in configuration file", e)
 
     # Build the documentation
     try:
