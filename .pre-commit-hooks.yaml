@@ -1,0 +1,6 @@
+-   id: check-mkdocs
+    name: check-mkdocs
+    description: check mkdocs project documentation works correcly
+    entry: check-mkdocs
+    language: python
+    language_version: python3
