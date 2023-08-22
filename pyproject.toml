@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "check_mkdocs"
 version = "0.1.0"
-description = ""
+description = "Simple check/command-line tool that parses, validates and loads configuration, builds the mkdocs project documentation, and serves it via a web server"
 readme = "README.md"
 authors = ["Rodrigo Gonzalez <r@rodrigo-gonzalez.com>"]
 repository = "https://github.com/RodrigoGonzalez/check-mkdocs"

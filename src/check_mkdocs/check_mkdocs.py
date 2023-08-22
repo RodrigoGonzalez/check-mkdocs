@@ -2,9 +2,14 @@ import argparse
 import os
 import platform
 import sys
+import tempfile
 import traceback
 
 import yaml
+from mkdocs.commands.build import build
+from mkdocs.commands.serve import serve
+from mkdocs.config import load_config
+from mkdocs.exceptions import ConfigurationError
 
 
 def main(argv: None = None) -> int:
@@ -31,71 +36,116 @@ def main(argv: None = None) -> int:
     -----------
     The main function creates an argument parser object using the
     `argparse.ArgumentParser()` class. It adds a positional argument
-    `config_file` to the parser, which represents the path to the
-    configuration file.
-    The `nargs='?'` option specifies that the argument is optional and can be
-    omitted.
+    `config` to the parser, which represents the path to the
+    configuration file. The `nargs='?'` option specifies that the argument is
+    optional and can be omitted.
+
     The `default='mkdocs.yml'` option specifies the default value of the
     argument if it is not provided.
+
+    Additionally, it adds a keyword argument `--config` to the parser. This
+    argument also represents the path to the configuration file. If both the
+    positional and keyword arguments are provided, the keyword argument will
+    take precedence.
 
     The function parses the command-line arguments using the
     `parser.parse_args(argv)` method, which returns an object containing the
     parsed arguments.
 
-    The function retrieves the value of the `config_file` argument from the
+    The function retrieves the value of the `config` argument from the
     parsed arguments.
 
     If the specified config file does not exist, the function raises a
     `FileNotFoundError` with a descriptive error message.
 
-    The function initializes a variable `retval` with value 0.
+    The function then attempts to open the config file in read mode using the
+    `open(config_file, 'r')` function. If successful, it reads the contents of
+    the file and loads them as a YAML object using the `yaml.safe_load(f)`
+    function.
 
-    The function attempts to open the config file in read mode using the
-    `open(filename, 'r')` function.
-    If successful, it reads the contents of the file and loads them as a YAML
-    object using the `yaml.safe_load(f)` function.
-    If an exception occurs during this process, the function prints an error
-    message indicating the file name and the error.
-    It also sets the value of `retval` to 1 to indicate an error.
+    The function checks if the 'site_name' key is present in the loaded YAML.
+    If not, it prints an error message.
 
-    Finally, the function returns the value of `retval`.
+    The function then loads the configuration using the
+    `load_config(config_file=config_file)` function. If there is an error in
+    the configuration file, it prints an error message.
+
+    The function then attempts to build the documentation using the
+    `build(config)` function. If there is an error during the build process,
+    it returns a user-friendly error message.
+
+    The function then attempts to start the server using the
+    `serve(config_file=config_file)` function. If there is an error during the
+    server start process, it returns a user-friendly error message.
+
+    Finally, the function returns 0 if all the above processes are successful.
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument("config_file", nargs="?", default="mkdocs.yml")
+    parser.add_argument("config", nargs="?", default="mkdocs.yml")
+    parser.add_argument("--config", dest="config_opt")
     args = parser.parse_args(argv)
 
-    filename = args.config_file
-    if not os.path.exists(filename):
+    config_file = args.config_opt if args.config_opt else args.config
+
+    config_file = args.config
+    if not os.path.exists(config_file):
         raise FileNotFoundError(
-            f"Config file '{filename}' not found. Please specify a config file."
+            f"Config file '{config_file}' not found. Please specify a " f"config file."
         )
 
-    retval = 0
+    # Load the YAML to check initial errors
     try:
-        with open(filename, "r") as f:
+        with open(config_file, "r") as f:
             config = yaml.safe_load(f)
-
         # Check if 'site_name' key is present in the loaded YAML
         if "site_name" not in config:
             print(
-                f"{filename}: Missing site_name field. This is a required "
+                f"{config_file}: Missing site_name field. This is a required "
                 f"field. See: https://www.mkdocs.org/user-guide/configuration/"
             )
-            retval = 1
 
     except Exception as e:
-        retval = _generate_user_friendly_yaml_load_error(filename, e)
-    return retval
+        return _generate_user_friendly_error_message(config_file, "Error loading YAML", e)
+
+    # Load the configuration
+    try:
+        config = load_config(config_file=config_file)
+    except ConfigurationError as e:
+        print(f"Error in configuration file: {e}")
+        return _generate_user_friendly_error_message(config_file, "Error in configuration file", e)
+
+    # Build the documentation in a temporary directory
+    try:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            config["site_dir"] = temp_dir
+            build(config)
+            # Start the server
+            try:
+                server = serve(config)
+            except Exception as e:
+                return _generate_user_friendly_error_message(
+                    config_file, "Error starting the server", e
+                )
+            finally:
+                server.stop()
+    except Exception as e:
+        return _generate_user_friendly_error_message(
+            config_file, "Error building the documentation", e
+        )
+
+    return 0
 
 
-def _generate_user_friendly_yaml_load_error(filename: str, e: Exception) -> int:
+def _generate_user_friendly_error_message(
+    config_file: str, errror_message: str, e: Exception
+) -> int:
     """
     Generates a user-friendly error message for when there is an error loading
     a YAML file.
 
     Parameters
     ----------
-    filename : str
+    config_file : str
         The name of the YAML file that failed to load.
     e : Exception
         The exception that was raised when trying to load the YAML file.
@@ -108,7 +158,7 @@ def _generate_user_friendly_yaml_load_error(filename: str, e: Exception) -> int:
 
     impl = platform.python_implementation()
     version = sys.version.split()[0]
-    print(f"{filename}: Error loading YAML with {impl} {version}: {e}")
+    print(f"{config_file}: {errror_message} with {impl} {version}: {e}")
     tb = "    " + traceback.format_exc().replace("\n", "\n    ")
     print(f"\n{tb}")
     return 1
