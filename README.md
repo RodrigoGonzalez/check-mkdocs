@@ -12,6 +12,8 @@ is configured correctly.
 - Can be used as a pre-commit hook.
 - Optionally, it can generate a build of the MkDocs documentation.
 
+Documentation: https://rodrigogonzalez.github.io/check-mkdocs/
+
 ## Pre-Commit Usage
 
 Add this to your `.pre-commit-config.yaml`, where `mkdocs.yml`
