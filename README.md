@@ -88,7 +88,6 @@ You can install this tool via pip:
 pip install check-mkdocs
 ```
 
-
 ### Local Installation
 
 This tool is packaged with Poetry. To install it, you can clone the
