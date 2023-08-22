@@ -1,3 +1,9 @@
+## v1.1.6 (2023-08-22)
+
+### Fix
+
+- **pre-commit-hooks**: add option that doesn't pass all changed files to check
+
 ## v1.1.5 (2023-08-22)
 
 ### Fix
