@@ -1,3 +1,10 @@
+## v1.1.5 (2023-08-22)
+
+### Fix
+
+- **pyproject**: add mkdocs to project dependencies
+- **check-mkdocs**: update project dependencies
+
 ## v1.1.4 (2023-08-22)
 
 ### Fix
