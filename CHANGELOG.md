@@ -1,3 +1,9 @@
+## v1.1.1 (2023-08-22)
+
+### Fix
+
+- **check-mkdocs**: fix help string to be more clear
+
 ## v1.1.0 (2023-08-22)
 
 ### Feat
