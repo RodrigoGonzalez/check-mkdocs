@@ -1,3 +1,9 @@
+## v1.2.0 (2023-08-22)
+
+### Feat
+
+- **mkdocs-plugins**: add support for additional plugins
+
 ## v1.1.6 (2023-08-22)
 
 ### Fix

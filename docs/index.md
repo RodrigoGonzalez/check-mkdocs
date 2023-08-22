@@ -37,11 +37,14 @@ is the name of your MkDocs YAML configuration file:
 ```yaml
 repos:
     - repo: https://github.com/RodrigoGonzalez/check-mkdocs
-      rev: v1.1.6
+      rev: v1.2.0
       hooks:
         - id: check-mkdocs
           name: check-mkdocs
           args: ["--config", "mkdocs.yml"]  # Optional, mkdocs.yml is the default
+          # If you have additional plugins or libraries that are not included in
+          # check-mkdocs, add them here
+          additional_dependencies: ['mkdocs-material']
 ```
 
 ## Command-Line Usage
