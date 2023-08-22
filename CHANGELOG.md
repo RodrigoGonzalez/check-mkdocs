@@ -1,3 +1,13 @@
+## v1.1.0 (2023-08-22)
+
+### Feat
+
+- **main-check**: add generate-build command line argument
+
+### Fix
+
+- **check-mkdocs**: fix wrong build options
+
 ## v1.0.0 (2023-08-21)
 
 ### BREAKING CHANGE
