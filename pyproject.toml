@@ -13,7 +13,7 @@ packages = [
 include = ["README.rst", "LICENSE", "CHANGELOG.md"]
 
 [tool.poetry.scripts]
-import-rules = "check_mkdocs.__main__:main"
+check-mkdocs = "check_mkdocs.__main__:main"
 
 [tool.poetry.dependencies]
 python = "^3.8"
