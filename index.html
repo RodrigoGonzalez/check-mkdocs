@@ -596,11 +596,11 @@ poetry install
 is the name of your MkDocs YAML configuration file:</p>
 <pre><code class="language-yaml">repos:
     - repo: https://github.com/RodrigoGonzalez/check-mkdocs
-      rev: v1.1.5
+      rev: v1.1.6
       hooks:
         - id: check-mkdocs
           name: check-mkdocs
-          args: [--config=mkdocs.yml]  # Optional, mkdocs.yml is the default
+          args: [&quot;--config&quot;, &quot;mkdocs.yml&quot;]  # Optional, mkdocs.yml is the default
 </code></pre>
 <h2 id="command-line-usage">Command-Line Usage</h2>
 <p>To run this hook, you can use the following command:</p>
