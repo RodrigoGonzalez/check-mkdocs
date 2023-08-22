@@ -1,3 +1,9 @@
+## v1.1.4 (2023-08-22)
+
+### Fix
+
+- **readme**: update pre commit hooks file
+
 ## v1.1.3 (2023-08-22)
 
 ### Fix
