@@ -20,7 +20,7 @@ is the name of your MkDocs YAML configuration file:
 ```yaml
 repos:
     - repo: https://github.com/RodrigoGonzalez/check-mkdocs
-      rev: v1.0.0
+      rev: v1.1.2
       hooks:
         - id: check-mkdocs
           name: check-mkdocs
