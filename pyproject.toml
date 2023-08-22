@@ -19,6 +19,7 @@ check-mkdocs = "check_mkdocs.__main__:main"
 [tool.poetry.dependencies]
 python = "^3.8"
 pyyaml = "^6.0.1"
+mkdocs = "^1.4.0"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -39,7 +40,6 @@ pytest-mock = "^3.11.1"
 
 
 [tool.poetry.group.docs.dependencies]
-mkdocs = "^1.4.0"
 mkdocs-material = "^9.1.6"
 mkdocstrings = {extras = ["optimize", "python"], version = "^0.22.0"}
 
