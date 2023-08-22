@@ -47,7 +47,7 @@ name = "cz_conventional_commits"
 version = "1.1.2"
 tag_format = "v$version"
 version_type = "semver"
-#update_changelog_on_bump = true
+update_changelog_on_bump = true
 version_files = [
     "pyproject.toml:version",
     "src/check_mkdocs/__init__.py:__version__",
