@@ -41,7 +41,7 @@ is the name of your MkDocs YAML configuration file:
 ```yaml
 repos:
     - repo: https://github.com/RodrigoGonzalez/check-mkdocs
-      rev: v1.1.3
+      rev: v1.1.4
       hooks:
         - id: check-mkdocs
           name: check-mkdocs
