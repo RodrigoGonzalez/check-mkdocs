@@ -11,7 +11,7 @@ license = "MIT"
 packages = [
     {include = "check_mkdocs", from = "src"}
 ]
-include = ["README.md", "LICENSE", "CHANGELOG.md"]
+include = ["README.md", "LICENSE", "CHANGELOG.md", ".pre-commit-hooks.yaml"]
 
 [tool.poetry.scripts]
 check-mkdocs = "check_mkdocs.__main__:main"
