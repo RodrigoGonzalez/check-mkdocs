@@ -32,6 +32,8 @@ mkdocs-autolinks-plugin = "^0.7.1"
 mkdocs-redirects = "^1.2.1"
 mkdocs-exclude = "^1.0.2"
 mkdocs-exclude-search = "^0.6.5"
+setuptools = "^75.2.0"
+distribute = "^0.7.3"
 
 
 [tool.poetry.group.dev.dependencies]
