@@ -8,20 +8,18 @@ repository = "https://github.com/RodrigoGonzalez/check-mkdocs/"
 homepage = "https://rodrigogonzalez.github.io/check-mkdocs/"
 license = "MIT"
 
-packages = [
-    {include = "check_mkdocs", from = "src"}
-]
+packages = [{ include = "check_mkdocs", from = "src" }]
 include = ["README.md", "LICENSE", "CHANGELOG.md", ".pre-commit-hooks.yaml"]
 
 [tool.poetry.scripts]
 check-mkdocs = "check_mkdocs.__main__:main"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 pyyaml = "^6.0.1"
 mkdocs = "^1.4.0"
 mkdocs-material = "^9.1.6"
-mkdocstrings = {extras = ["all"], version = "^0.22.0"}
+mkdocstrings = { extras = ["all"], version = "^0.22.0" }
 pymarkdown = "^0.1.4"
 mkdocs-macros-plugin = "^1.0.4"
 mkdocs-click = "^0.8.0"
@@ -48,7 +46,7 @@ autoflake = "^2.2.0"
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.0"
 pytest-cov = "^4.1.0"
-coverage = { version = "^7.3.0",  extras = ["toml"] }
+coverage = { version = "^7.3.0", extras = ["toml"] }
 covdefaults = "^2.3.0"
 pytest-mock = "^3.11.1"
 
