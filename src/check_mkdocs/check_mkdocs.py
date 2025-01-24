@@ -105,6 +105,15 @@ def main(argv: None = None) -> int:
         default=False,
         help="Flag to generate a build of the documentation in your project. Default is False.",
     )
+    parser.add_argument(
+        "--custom-tags",
+        dest="custom_tags",
+        default=[],
+        nargs="+",
+        type=str,
+        help="Custom yaml tags that should be parsed correctly. e.g. `--custom-tags ! !!`",
+    )
+
     args = parser.parse_args(argv)
 
     config_file = args.config_opt or args.config
@@ -115,6 +124,9 @@ def main(argv: None = None) -> int:
         )
 
     # Load the YAML to check initial errors
+
+    for tag in args.custom_tags:
+        yaml.add_multi_constructor(tag, lambda loader, suffix, node: None)
     try:
         with open(config_file, "r") as f:
             config = yaml.safe_load(f)
@@ -143,7 +155,14 @@ def main(argv: None = None) -> int:
         else:
             with tempfile.TemporaryDirectory() as temp_dir:
                 subprocess.run(
-                    ["mkdocs", "build", "--config-file", config_file, "--site-dir", temp_dir],
+                    [
+                        "mkdocs",
+                        "build",
+                        "--config-file",
+                        config_file,
+                        "--site-dir",
+                        temp_dir,
+                    ],
                     check=True,
                 )
     except Exception as e:
@@ -155,7 +174,14 @@ def main(argv: None = None) -> int:
     # Start the server
     try:
         server_process = subprocess.Popen(
-            ["mkdocs", "serve", "--config-file", config_file, "--no-livereload", "--dirty"]
+            [
+                "mkdocs",
+                "serve",
+                "--config-file",
+                config_file,
+                "--no-livereload",
+                "--dirty",
+            ]
         )
         time.sleep(5)  # wait for 5 seconds to let the server start
         print("Shutting down...")
