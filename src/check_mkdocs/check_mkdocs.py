@@ -81,6 +81,8 @@ def main(argv: None = None) -> int:
     `serve(config_file=config_file)` function. If there is an error during the
     server start process, it returns a user-friendly error message.
 
+    If --no-server is passed as an argument, starting the server is skipped.
+
     Finally, the function returns 0 if all the above processes are successful.
     """
     parser = argparse.ArgumentParser()
@@ -105,6 +107,15 @@ def main(argv: None = None) -> int:
         default=False,
         help="Flag to generate a build of the documentation in your project. Default is False.",
     )
+
+    parser.add_argument(
+        "--no-server",
+        dest="no_server",
+        action="store_true",
+        default=False,
+        help="Flag to skip starting the mkdocs as a server. Default is False.",
+    )
+
     parser.add_argument(
         "--custom-tags",
         dest="custom_tags",
@@ -170,25 +181,28 @@ def main(argv: None = None) -> int:
             config_file, "Error building the documentation", e
         )
 
-    print("Trying to start the server...")
     # Start the server
-    try:
-        server_process = subprocess.Popen(
-            [
-                "mkdocs",
-                "serve",
-                "--config-file",
-                config_file,
-                "--no-livereload",
-                "--dirty",
-            ]
-        )
-        time.sleep(5)  # wait for 5 seconds to let the server start
-        print("Shutting down...")
-        server_process.terminate()
-        server_process.wait()
-    except Exception as e:
-        return _generate_user_friendly_error_message(config_file, "Error starting the server", e)
+    if not args.no_server:
+        print("Trying to start the server...")
+        try:
+            server_process = subprocess.Popen(
+                [
+                    "mkdocs",
+                    "serve",
+                    "--config-file",
+                    config_file,
+                    "--no-livereload",
+                    "--dirty",
+                ]
+            )
+            time.sleep(5)  # wait for 5 seconds to let the server start
+            print("Shutting down...")
+            server_process.terminate()
+            server_process.wait()
+        except Exception as e:
+            return _generate_user_friendly_error_message(
+                config_file, "Error starting the server", e
+            )
 
     return 0
 
