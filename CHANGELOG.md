@@ -1,5 +1,5 @@
 ## v1.2.0 (2025-07-11)
-- adedd --no-server option
+- added --no-server option
 
 ## v1.2.0 (2023-08-22)
 
