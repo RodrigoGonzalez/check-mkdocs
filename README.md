@@ -109,6 +109,9 @@ build the project documentation, and start the server. If
 there's an error in any of these steps, the tool will print
 an error message and return an error code.
 
+### The `--no-server` Argument
+When passed `--no-server`, starting the server is skipped.
+
 ## Known Issues
 
 ### Missing MkDocs Plugins
